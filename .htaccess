@@ -1,0 +1,20 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+RewriteRule ^muahang-(.*).html index.php?controller=CartController&action=add&id=$1
+RewriteRule ^cart.html  index.php?controller=CartController
+RewriteRule ^home   index.php
+RewriteRule ^admin index.php?controller=AdminController
+
+RewriteRule ^logout.html$ index.php?controller=Login&action=logout [L]
+RewriteRule ^login.html$ index.php?controller=Login&action=index [L]
+RewriteRule ^login_dologin.php$ index.php?controller=Login&action=dologin
+
+# Rewrite mode tin tuc #
+RewriteRule ^index.html index.php
+RewriteRule ^product.html  index.php?Controller=Book
+RewriteRule ^category-(.*)-(.*).html  index.php?Controller=Book&action=bookcat&cat_id=$2 [L]
+
+RewriteRule ^detail-(.*)-(.*).html index.php?Controller=Book&action=detail&id=$2 [L]
+RewriteRule ^user.html  index.php?controller=User
+RewriteRule ^admin.php index.php?controller=Admin&action=index
+
